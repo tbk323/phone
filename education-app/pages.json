@@ -1,0 +1,93 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index/index",
+			"style": {
+				// "navigationBarTitleText": "首页"
+				"navigationStyle": "custom"
+			}
+		}
+	    ,{
+            "path" : "pages/cur/cur",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "分类",
+				 "enablePullDownRefresh": false,
+				 "navigationBarBackgroundColor": "#345dc2",
+				 "navigationBarTextStyle": "white"
+            }
+            
+        }
+        ,{
+            "path" : "pages/reading/reading",
+            "style" :                                                                                    
+            {
+                // "navigationBarTitleText": "阅读",
+				"navigationStyle": "custom",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/ask/ask",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "问答",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/mine/mine",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "我的",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+    ],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	},
+	"easycom": {
+		"autoscan": true
+	},
+	"tabBar": {
+		"list": [
+			{
+				"iconPath": "static/tab/index.png",
+				"pagePath": "pages/index/index",
+				"text": "首页",
+				"selectedIconPath":"static/tab/index-active.png" 
+			},
+			{
+				"iconPath": "static/tab/category.png",
+				"pagePath": "pages/cur/cur",
+				"text": "分类",
+				"selectedIconPath": "static/tab/category-active.png"
+			},
+			{
+				"iconPath": "static/tab/article.png",
+				"pagePath": "pages/reading/reading",
+				"text": "阅读",
+				"selectedIconPath": "static/tab/article-active.png"
+			},
+			{
+				"iconPath": "static/tab/question.png",
+				"pagePath": "pages/ask/ask",
+				"text": "问答",
+				"selectedIconPath": "static/tab/question-active.png"
+			},
+			{
+				"iconPath": "static/tab/my.png",
+				"pagePath": "pages/mine/mine",
+				"text": "我的",
+				"selectedIconPath": "static/tab/my-active.png"
+			}
+		]
+	}
+}
