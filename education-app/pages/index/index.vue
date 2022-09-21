@@ -85,11 +85,6 @@
 			}
 			getbox()
 			return {
-				// 滚动
-				indicatorDots: true,
-				 autoplay: true,
-				interval: 2000,
-				duration: 500,
 				// 内容
 				...toRefs(data),
 			};

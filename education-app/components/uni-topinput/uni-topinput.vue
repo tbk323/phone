@@ -20,7 +20,7 @@
 .top{
 	width: 100%;
 	background-color:#0071b6;
-	height: 80rpx;
+	height: 60rpx;
 	padding: 10px;
 	position: fixed;
 	top: 0;
