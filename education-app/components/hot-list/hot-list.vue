@@ -24,7 +24,6 @@
 	export default {
 		props:['boxlist'],
 		setup() {
-			
 			return{
 				
 			}

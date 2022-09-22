@@ -12,7 +12,7 @@
 			<!-- 右侧侧边栏 -->
 			<view class="right">
 				<ul>
-					<li v-for="i,index in toplist" :key="i.id">{{i.name}}</li>
+					<li v-for="i,index in toplist" :key="i.id" @tap="tzpage">{{i.name}}</li>
 				</ul>
 			</view>
 		</div>
@@ -33,6 +33,12 @@
 				leftlist: [],
 				toplist: []
 			})
+			// 跳转page
+			const tzpage=()=>{
+				uni.navigateTo({
+					url:'../page-list/page-list'
+				})
+			}
 			const getleft=()=>{
 				http.get('/article/api/category/label/list').then(res => {
 					data.leftlist = res.data.data
@@ -48,6 +54,7 @@
 			return {
 				...toRefs(data),
 				tabcur,
+				tzpage
 			};
 		}
 	}

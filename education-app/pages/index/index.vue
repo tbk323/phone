@@ -1,6 +1,6 @@
 <template>
 	<view class="login">
-		<view class="top">
+		<view class="top" @click="tzsearch">
 			<!-- inp -->
 			<uni-topinput></uni-topinput>
 			<!-- banner -->
@@ -9,7 +9,7 @@
 		<!-- 中间模块 -->
 		<view class="cen">
 			<ul>
-				<li v-for="i,index in cenlist" :key="index">{{i.name}}</li>
+				<li v-for="i,index in cenlist" :key="index" @tap="tzpage">{{i.name}}</li>
 				<li>全部分类</li>
 			</ul>
 		</view>
@@ -66,6 +66,18 @@
 	import {ref,reactive,toRefs} from 'vue'
 	export default {
 		setup() {
+			// 跳转模块
+			const tzpage=()=>{
+				uni.navigateTo({
+					url:'../page-list/page-list'
+				})
+			}
+			// 跳转搜索
+			const tzsearch=()=>{
+				uni.navigateTo({
+					url:'../search-list/search-list'
+				})
+			}
 			const data=reactive({
 				cenlist:[],
 				boxlist:[],
@@ -87,6 +99,8 @@
 			return {
 				// 内容
 				...toRefs(data),
+				tzsearch,
+				tzpage
 			};
 		},
 		

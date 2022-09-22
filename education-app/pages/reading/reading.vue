@@ -32,10 +32,7 @@
 
 <script>
 	import http from '../../common/js/request.js'
-	import {
-		reactive,
-		toRefs
-	} from 'vue'
+	import {reactive,toRefs} from 'vue'
 	export default {
 		setup() {
 			const data = reactive({
