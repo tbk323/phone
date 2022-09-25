@@ -16,7 +16,7 @@
 		</view>
 		<!-- 内容 -->
 		<div class="boxx">
-			<view class="box" v-for="i,index in readlist" :key="i.id">
+			<view class="box" v-for="i,index in readlist" :key="i.id" @click="details">
 				<div class="left">
 					<p>{{i.title}}</p>
 					<p class="smll">{{i.summary}}</p>
@@ -40,6 +40,12 @@
 				readlist: [],
 				readId:0
 			})
+			// 跳转详情
+			const details=()=>{
+				uni.navigateTo({
+					url:'./../reading-details/reading-details'
+				})
+			}
 			// 切换
 			const all=(i)=>{
 				data.readId=i
@@ -69,6 +75,7 @@
 			return {
 				tabcar,
 				all,
+				details,
 				...toRefs(data)
 			};
 		}
