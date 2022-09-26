@@ -34,9 +34,7 @@
 				</div>
 				<!-- 退出登录· -->
 				<div class="bto">
-					<!-- <button @click="backlogin">退出登录</button> -->
-					<button  @click="dialogToggle('success')">
-						<text class="button-text success-text">成功</text></button>
+					<button @click="backlogin">退出登录</button>
 				</div>
 			</div>
 	</view>
@@ -52,10 +50,10 @@
 			data.loginlist=JSON.parse(localStorage.getItem('userInfo')) ? JSON.parse(localStorage.getItem('userInfo')):[]
 			// 退出登录
 			const backlogin=()=>{
-				// localStorage.clear()
-				uni.navigateTo({
-					url:'../login/login'
-				})
+				localStorage.clear()
+				uni.switchTab({
+						url:'../mine/mine'
+					})
 			}
 			return {
 				backlogin,

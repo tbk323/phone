@@ -41,7 +41,6 @@
 					localStorage.setItem('userInfo', JSON.stringify(res.data.data.userInfo))
 				})
 			}
-			getlogin()
 			// 登录
 			const login=()=>{
 				if(data.mobile.length!==11||data.tempwd!=='123456'){
@@ -52,10 +51,10 @@
 					})
 				}else{
 					getlogin()
-					data.mobile='',
-					data.tempwd='',
-					uni.navigateBack({
-						
+					data.mobile=''
+					data.tempwd=''
+					uni.switchTab({
+						url:'../mine/mine'
 					})
 				}
 			}

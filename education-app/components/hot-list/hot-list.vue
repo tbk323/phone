@@ -22,6 +22,7 @@
 <script>
 	import {ref} from 'vue'
 	export default {
+		name:'hot-list',
 		props:['boxlist'],
 		setup() {
 			return{

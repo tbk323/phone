@@ -1,10 +1,10 @@
 <template>
 	<view class="login">
-		<view class="top" @click="tzsearch">
+		<view class="top">
 			<!-- inp -->
-			<uni-topinput></uni-topinput>
+			<span  @click="tzsearch"><uni-topinput></uni-topinput></span>
 			<!-- banner -->
-			<banner></banner>
+			<span @tap="tzdeta"><banner></banner></span>
 		</view>
 		<!-- 中间模块 -->
 		<view class="cen">
@@ -66,6 +66,12 @@
 	import {ref,reactive,toRefs} from 'vue'
 	export default {
 		setup() {
+			// 跳转详情模块
+			const tzdeta=()=>{
+				uni.navigateTo({
+					url:'../details/details'
+				})
+			}
 			// 跳转模块
 			const tzpage=()=>{
 				uni.navigateTo({
@@ -100,7 +106,8 @@
 				// 内容
 				...toRefs(data),
 				tzsearch,
-				tzpage
+				tzpage,
+				tzdeta
 			};
 		},
 		
