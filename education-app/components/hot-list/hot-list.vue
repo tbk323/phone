@@ -1,7 +1,7 @@
 <template>
 	<view>
 		<div class="boxx">
-				<view class="box" v-for="i,index in boxlist" :key="i.id">
+				<view class="box" v-for="i,index in boxlist" :key="i.id" @tap="buy">
 					<div class="left">
 						<img :src="i.mainImage" alt="">
 					</div>
@@ -25,8 +25,13 @@
 		name:'hot-list',
 		props:['boxlist'],
 		setup() {
+			const buy=()=>{
+				uni.navigateTo({
+					url:'/pages/details/details'
+				})
+			}
 			return{
-				
+				buy
 			}
 		}
 	}

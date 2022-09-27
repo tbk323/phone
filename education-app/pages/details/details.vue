@@ -1,5 +1,5 @@
 <template>
-	<view>
+	<view class="deatlist">
 		<!-- 顶部 -->
 		<div class="top">
 			<span class="black" @tap="back">
@@ -55,12 +55,12 @@
 		<div v-else>
 			<view class="Package" v-for="i,index in packlist" :key="i.id">
 				<p>{{i.title}}</p>
-				<hot-list :boxlist="i.list"></hot-list>
-				<p class="red">￥{{i.totalPrice}} <span>￥{{i.groupPrice}}</span> <span>购买套餐</span></p>
+				<hot-list :boxlist="i.list"></hot-list> 
+				<p class="red">￥{{i.totalPrice}} <span>￥{{i.groupPrice}}</span><span @tap="buy(i.list)">购买套餐</span></p>
 			</view>
 		</div>
 		<div class="look">
-			<button>立即观看</button>
+			<button @tap="look">立即观看</button>
 		</div>
 	</view>
 </template>
@@ -80,12 +80,26 @@
 				packlist:[],
 				// packone:[]
 			})
+			// 购买
+			const buy=(item)=>{;
+				let it=JSON.stringify(item)
+				uni.navigateTo({
+					url:`../buylist/buylist?it=${it}`
+				})
+			}
+			// 立即观看
+			const look=()=>{
+				uni.navigateTo({
+					url:'../look-now/look-now'
+				})
+			}
 			// 高亮
 			const active=(index)=>{
 				data.curindex=index
 			}
 			// 返回
 			const back=()=>{
+				
 				uni.switchTab({
 					url:'../index/index'
 				})
@@ -111,7 +125,7 @@
 			const gettalk=()=>{
 				http.get('/course/api/comment/list/null').then(res=>{
 					data.talklist=res.data.data
-					console.log(res.data.data);
+					// console.log(res.data.data);
 				})
 			}
 			gettalk()
@@ -127,6 +141,8 @@
 			return {
 				active,
 				back,
+				look,
+				buy,
 				...toRefs(data)
 			};
 		}
@@ -134,6 +150,10 @@
 </script>
 
 <style lang="scss">
+	.deatlist{
+		width: 100%;
+		height:1800px;
+	}
 	.look{
 		padding: 10px;
 		position: fixed;
@@ -158,7 +178,7 @@
 			font-size: 16px;
 		}
 		span:last-child{
-			margin-left: 120px;
+			margin-left: 100px;
 		}
 	}
 	.Package{

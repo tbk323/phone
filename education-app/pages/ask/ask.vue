@@ -14,7 +14,7 @@
 		</view>
 		<!-- 内容 -->
 		<div class="box" >
-			<div class="box-one" v-for="i,index in hotlist" :key="i.id">
+			<div class="box-one" v-for="i,index in hotlist" :key="i.id" @tap="askxq">
 				<p>{{i.title}}</p>
 				<p><span>{{i.reply}}回答</span><span>{{i.viewCount}}浏览</span>
 					<span>{{i.nickName}}：{{i.createDate}}</span>
@@ -34,6 +34,12 @@
 				toplist:['热门回答','最新问题','等待回答'],
 				hotlist:[]
 			})
+			// 跳转问答详情
+			const askxq=()=>{
+				uni.navigateTo({
+					url:'../ask-list/ask-list'
+				})
+			}
 			// 方法
 			const tz=(index)=>{
 				data.askId=index
@@ -71,6 +77,7 @@
 			// getasknew()
 			return {
 				tz,
+				askxq,
 				...toRefs(data)
 			};
 		}
