@@ -19,28 +19,28 @@
 			</div>
 			
 			<!-- 下面部分 -->
-			<div class="login-one">
+			<div class="login-one"  @tap="$router.push('/pages/mineseting/order')">
 				<p>我的订单</p>
 				<span class="triangle"></span>
 			</div>
-			<div class="login-one">
+			<div class="login-one"  @tap="$router.push('/pages/mineseting/mybalance')">
 				<p>我的余额</p>
 				<span class="triangle"></span>
 			</div>
-			<div class="login-one">
+			<div class="login-one" @tap="$router.push('/pages/mineseting/study')">
 				<p>我的学习</p>
 				<span class="triangle"></span>
 			</div>
 			<view class="cen"></view>
-			<div class="login-one">
+			<div class="login-one"  @tap="$router.push('/pages/mineseting/setting')">
 				<p>设置</p>
 				<span class="triangle"></span>
 			</div>
-			<div class="login-one">
+			<div class="login-one"  @tap="$router.push('/pages/mineseting/feedback')">
 				<p>意见反馈</p>
 				<span class="triangle"></span>
 			</div>
-			<div class="login-one">
+			<div class="login-one" @tap="$router.push('/pages/mineseting/about')">
 				<p>关于我们</p>
 				<span class="triangle"></span>
 			</div>
@@ -69,9 +69,16 @@
 					url:'../user-list/user-list'
 				})
 			}
+			// 关于我们
+			// const guanyumine=()=>{
+			// 	uni.navigateTo({
+			// 		url:'../mineseting/about'
+			// 	})
+			// }
 			return {
 				login,
 				loginxq,
+				// guanyumine,
 				...toRefs(data)
 			};
 		}
@@ -96,7 +103,7 @@
 		box-sizing: border-box;
 		padding: 20px;
 		width: 100%;
-		height: 40px;
+		height: 60px;
 		border-bottom: 1px solid #eee;
 		display: flex;
 		// justify-content: space-between;

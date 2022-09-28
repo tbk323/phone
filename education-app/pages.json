@@ -134,6 +134,80 @@
                 "enablePullDownRefresh": false
             }
             
+        },
+		// 关于我们
+		{
+		    "path" : "pages/mineseting/about",
+		    "style" :                                                                                    
+		    {
+		        "navigationBarTitleText": "",
+		        "enablePullDownRefresh": false,
+				"navigationStyle": "custom"
+		    }
+		    
+		},
+		// 我的余额
+		{
+		    "path" : "pages/mineseting/mybalance",
+		    "style" :                                                                                    
+		    {
+		        "navigationBarTitleText": "",
+		        "enablePullDownRefresh": false,
+				"navigationStyle": "custom"
+		    }
+		    
+		},
+		// 我的学习
+		{
+		    "path" : "pages/mineseting/study",
+		    "style" :                                                                                    
+		    {
+		        "navigationBarTitleText": "",
+		        "enablePullDownRefresh": false,
+				"navigationStyle": "custom"
+		    }
+		    
+		},
+		// 设置
+		{
+		    "path" : "pages/mineseting/setting",
+		    "style" :                                                                                    
+		    {
+		        "navigationBarTitleText": "",
+		        "enablePullDownRefresh": false,
+				"navigationStyle": "custom"
+		    }
+		    
+		},
+		// 我的意见
+		{
+		    "path" : "pages/mineseting/feedback",
+		    "style" :                                                                                    
+		    {
+		        "navigationBarTitleText": "",
+		        "enablePullDownRefresh": false,
+				"navigationStyle": "custom"
+		    }
+		    
+		},
+		// 订单
+        {
+            "path" : "pages/mineseting/order",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "我的订单",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/mineseting/order-ready",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "订单支付",
+                "enablePullDownRefresh": false
+            }
+            
         }
     ],
 	"globalStyle": {
