@@ -1,0 +1,1 @@
+<view class="inp"><u-button u-s="{{['d']}}" u-i="c005db4c-0" bind:__l="__l">搜索</u-button></view><view class="banner"><swiper indicator-dots="{{true}}" autoplay="{{true}}" interval="{{3000}}" duration="{{1000}}"><swiper-item><image src="{{''}}" alt=""></image></swiper-item><swiper-item><image src="{{''}}" alt=""></image></swiper-item></swiper></view>

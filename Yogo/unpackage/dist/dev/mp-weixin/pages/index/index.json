@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "优购商城",
+  "navigationBarBackgroundColor": "#ff0000",
+  "usingComponents": {
+    "u-button": "../../uni_modules/vk-uview-ui/components/u-button/u-button"
+  }
+}
