@@ -1,1 +1,1 @@
-<view> 分类 </view>
+<view><topinput u-i="328cd554-0" bind:__l="__l"></topinput><view class="box"><view class="left"><view><view wx:for="{{a}}" wx:for-item="i" wx:key="b" class="{{[i.c && 'gl']}}" bindtap="{{i.d}}">{{i.a}}</view></view></view><view class="right"><view wx:for="{{b}}" wx:for-item="i" wx:key="d"><view>/{{i.a}}/</view><view><view wx:for="{{i.b}}" wx:for-item="child"><image src="{{child.a}}"></image><view>{{i.c}}</view></view></view></view></view></view></view>

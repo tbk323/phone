@@ -1,5 +1,9 @@
 {
   "navigationBarTitleText": "分类",
   "enablePullDownRefresh": false,
-  "usingComponents": {}
+  "navigationBarBackgroundColor": "#ff0000",
+  "navigationBarTextStyle": "white",
+  "usingComponents": {
+    "topinput": "../../components/topinput/topinput"
+  }
 }

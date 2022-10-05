@@ -18,7 +18,7 @@
 			<div v-for="i,index in data.rightlist" :key="index">
 				<p>/{{i.cat_name}}/</p>
 				<ul>
-					<li v-for="child,ind in i.children">
+					<li v-for="child,ind in i.children" >
 						<img :src="child.cat_icon">
 						<p>{{i.cat_name}}</p>
 					</li>
@@ -36,7 +36,8 @@
 	const data=reactive({
 		leftlist:[],
 		catid:1,
-		rightlist:[]
+		rightlist:[],
+		onelist:[]
 	})
 	// 点击高亮
 	const btn=(id,item)=>{
@@ -47,7 +48,8 @@
 	// 左侧侧边栏
 	http('/categories').then(res=>{
 		data.leftlist=res.message
-		console.log(res.message);
+		console.log(res.message[0].children);
+		data.onelist=res.message[0].children
 	})
 	
 	

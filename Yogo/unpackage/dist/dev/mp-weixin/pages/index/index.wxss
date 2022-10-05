@@ -23,14 +23,62 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
+.home_florgoods_one {
+  width: 1000rpx;
+  height: 60rpx;
+}
+.home_florgoods_two {
+  width: 300rpx;
+  height: 500rpx;
+}
+.home_florgoods_twos {
+  width: 220rpx;
+  height: 220rpx;
+}
+.home_florgoods_twos_view:nth-of-type(1) {
+  display: none;
+}
+.home_florgoods_flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.home_florgoods_twos_views {
+  margin-top: -25rpx;
+}
+.cen {
+  width: 95%;
+  height: 180rpx;
+  margin-top: 80px;
+}
+.cen ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.cen ul li {
+  padding: 10rpx;
+  list-style: none;
+}
+.cen ul li img {
+  width: 100%;
+  height: 100%;
+}
+.banner {
+  width: 100%;
+  height: 160rpx;
+}
+.banner img {
+  width: 100%;
+  height: 100%;
+}
 .inp {
   width: 100%;
-  height: 60px;
+  height: 100rpx;
   background-color: red;
-  padding: 10px;
+  padding: 10rpx;
 }
 .inp u-button {
   width: 90%;
-  height: 20px;
   background-color: skyblue;
 }

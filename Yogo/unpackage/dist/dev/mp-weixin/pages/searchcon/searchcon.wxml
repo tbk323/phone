@@ -1,0 +1,1 @@
+<view><view class="box"><view class="inp"><input type="text" placeholder="请输入您搜索的商品" bindinput="{{a}}" value="{{b}}"></input><button size="mini" hidden="{{!c}}" bindtap="{{d}}">取消</button></view><view wx:for="{{e}}" wx:for-item="i" wx:key="b" class="con" bindtap="{{i.c}}">{{i.a}}</view></view></view>

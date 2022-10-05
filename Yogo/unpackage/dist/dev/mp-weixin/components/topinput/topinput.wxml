@@ -1,0 +1,1 @@
+<view><view class="inp"><u-button u-s="{{['d']}}" class="btn" bindclick="{{a}}" u-i="9e0b6514-0" bind:__l="__l">搜索</u-button></view></view>

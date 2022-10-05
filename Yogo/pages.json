@@ -4,7 +4,8 @@
 			"path": "pages/index/index",
 			"style": {
 				"navigationBarTitleText": "优购商城",
-				"navigationBarBackgroundColor":"#ff0000"
+				"navigationBarBackgroundColor":"#ff0000",
+				"navigationBarTextStyle": "white"
 				
 			}
 		},
@@ -14,7 +15,8 @@
             {
                 "navigationBarTitleText": "分类",
                 "enablePullDownRefresh": false,
-				"navigationBarBackgroundColor":"#ff0000"
+				"navigationBarBackgroundColor":"#ff0000",
+				"navigationBarTextStyle": "white"
             }
             
         }
@@ -22,13 +24,37 @@
             "path" : "pages/car/car",
             "style" :                                                                                    
             {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
+                "navigationBarTitleText": "购物车",
+                "enablePullDownRefresh": false,
+				"navigationBarBackgroundColor":"#ff0000",
+				"navigationBarTextStyle": "white"
             }
             
         }
         ,{
             "path" : "pages/mine/mine",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "我的",
+                "enablePullDownRefresh": false,
+				"navigationBarBackgroundColor":"#ff0000",
+				"navigationBarTextStyle": "white"
+            }
+            
+        }
+        ,{
+            "path" : "pages/searchcon/searchcon",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "搜索中心",
+                "enablePullDownRefresh": false,
+				"navigationBarBackgroundColor":"#ff0000",
+				"navigationBarTextStyle": "white"
+            }
+            
+        }
+        ,{
+            "path" : "pages/shoplist/shoplist",
             "style" :                                                                                    
             {
                 "navigationBarTitleText": "",

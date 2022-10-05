@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "搜索中心",
+  "enablePullDownRefresh": false,
+  "navigationBarBackgroundColor": "#ff0000",
+  "navigationBarTextStyle": "white",
+  "usingComponents": {}
+}

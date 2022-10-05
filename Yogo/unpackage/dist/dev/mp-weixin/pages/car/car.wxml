@@ -1,1 +1,1 @@
-<view> 购物车 </view>
+<view><view class="top"><button type="default">获取收货地址</button></view><view class="cen"><view>购物车</view></view><view class="im"><image src="/static/yogo小人儿.png" mode=""></image></view><view class="bto"><view><checkbox value="cb" checked="{{a}}"/>全选</view><view class="right"><label><view>合计：<label>￥0</label></view><view>包含运费</view></label><label class="buy">结算(0)</label></view></view></view>

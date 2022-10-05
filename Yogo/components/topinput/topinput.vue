@@ -1,7 +1,7 @@
 <template>
 	<view>
 		<div class="inp">
-			<u-button class="btn">搜索</u-button>
+			<u-button class="btn" @click="$router.push('/pages/searchcon/searchcon')">搜索</u-button>
 		</div>
 		
 	</view>

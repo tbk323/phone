@@ -3,7 +3,9 @@
         "pages/index/index",
         "pages/cate/cate",
         "pages/car/car",
-        "pages/mine/mine"
+        "pages/mine/mine",
+        "pages/searchcon/searchcon",
+        "pages/shoplist/shoplist"
     ],
     "window": {
         "navigationBarTextStyle": "black",

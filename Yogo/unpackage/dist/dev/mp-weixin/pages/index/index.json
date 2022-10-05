@@ -1,7 +1,10 @@
 {
   "navigationBarTitleText": "优购商城",
   "navigationBarBackgroundColor": "#ff0000",
+  "navigationBarTextStyle": "white",
   "usingComponents": {
-    "u-button": "../../uni_modules/vk-uview-ui/components/u-button/u-button"
+    "topinput": "../../components/topinput/topinput",
+    "u-grid-item": "../../uni_modules/vk-uview-ui/components/u-grid-item/u-grid-item",
+    "u-grid": "../../uni_modules/vk-uview-ui/components/u-grid/u-grid"
   }
 }
