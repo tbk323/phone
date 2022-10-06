@@ -2,14 +2,14 @@
 	<view>
 		<!-- 轮播图 -->
 		<swiper :indicator-dots="true" :autoplay="true" :interval="3000" :duration="1000" class="im">
-			<swiper-item v-for="i,index in list.pics" :key="index">
+			<swiper-item v-for="i,index in data.list.pics" :key="index">
 				<img :src="i.pics_big" alt="">
 			</swiper-item>
 		</swiper>
-		<p class="red">￥{{list.goods_price}}</p>
+		<p class="red">￥{{data.list.goods_price}}</p>
 		<!-- 中间 -->
 		<view class="cen">
-			<p>{{list.goods_name}}</p>
+			<p>{{data.list.goods_name}}</p>
 			<view class="right">
 				<p>
 					<uni-icons type="star"></uni-icons>
@@ -24,7 +24,7 @@
 		</view>
 		<!-- 图文详情 -->
 		<p class="red">图文详情</p>
-		<p v-html="list.goods_introduce"></p>
+		<p v-html="data.list.goods_introduce"></p>
 
 
 	</view>
@@ -36,43 +36,25 @@
 		useRoute
 	} from 'vue-router'
 	import {
-		ref,
 		reactive
 	} from 'vue'
-	const list = ref([])
-	// 获取id
-	let route = useRoute()
-	console.log(route.query.id);
-	http(`/goods/detail?goods_id=${route.query.id}`).then(res => {
-		console.log(res.message);
-		list.value = res.message
-	})
-	// 点击购物车
-	// const onClick(e) => {
-	// 	uni.showToast({
-	// 		title: `点击${e.content.text}`,
-	// 		icon: 'none'
-	// 	})
-	// }
-	// const buttonClick(e) => {
-	// 	console.log(e)
-	// 	// this.options[2].info++
-	// }
-	// 购物车
 	const data = reactive({
+		list: [],
+		shoplist: [],
+		// shop:[],
 		options: [{
 			icon: 'chat',
 			text: '客服'
 		}, {
 			icon: 'shop',
 			text: '店铺',
-			info: 2,
+			info: 0,
 			infoBackgroundColor: '#007aff',
 			infoColor: "#f5f5f5"
 		}, {
 			icon: 'cart',
 			text: '购物车',
-			info: 2
+			info: 0
 		}],
 		buttonGroup: [{
 				text: '加入购物车',
@@ -85,7 +67,69 @@
 				color: '#fff'
 			}
 		],
+		customButtonGroup: [{
+				text: '加入购物车',
+				backgroundColor: 'linear-gradient(90deg, #1E83FF, #0053B8)',
+				color: '#fff'
+			},
+			{
+				text: '立即购买',
+				backgroundColor: 'linear-gradient(90deg, #60F3FF, #088FEB)',
+				color: '#fff'
+			}
+		],
+		customButtonGroup1: [{
+			text: '立即购买',
+			backgroundColor: 'linear-gradient(90deg, #FE6035, #EF1224)',
+			color: '#fff'
+		}]
 	})
+	// 获取id
+	let route = useRoute()
+	console.log(route.query.id);
+	http(`/goods/detail?goods_id=${route.query.id}`).then(res => {
+		data.list = res.message
+	})
+	// 点击购物车
+	const onClick = (e) => {
+		if (e.index == 2) {
+			uni.switchTab({
+				url: '/pages/car/car'
+			})
+		}
+		// uni.showToast({
+		// 	title: `点击${e.content.text}`,
+		// 	icon: 'none'
+		// })
+	}
+	const buttonClick = (e) => {
+		if(e.index==0){
+			data.shoplist=JSON.parse(localStorage.getItem('info'))?JSON.parse(localStorage.getItem('info')):[]
+			let fin=data.shoplist.find(item=>item.goods_id==route.query.id)
+			if(fin){
+				fin.num++
+				uni.showToast({
+						title: `已有该商品，商品+1`,
+						icon: 'none'
+					})
+			}else{
+				data.shoplist.push({
+					...data.list,
+					num:1,
+					flag:false
+				})
+				uni.showToast({
+						title: `已添加`,
+						icon: 'none'
+					})
+			}
+			console.log(data.shoplist)
+			localStorage.setItem('info',JSON.stringify(data.shoplist))
+		}else{
+			console.log('购买');
+		}
+	}
+	// 购物车
 </script>
 
 <style lang="scss">

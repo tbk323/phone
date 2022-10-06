@@ -7,15 +7,15 @@
 			<!-- 左侧栏 -->
 			<div class="left">
 				<ul>
-					<li v-for="i,index in data.leftlist" :key="i.cat_id"
-					:class="{gl:i.cat_id==data.catid}"
+					<li v-for="i,index in leftlist" :key="i.cat_id"
+					:class="{gl:i.cat_id==catid}"
 					@tap="btn(i.cat_id,i.children)"
 					>{{i.cat_name}}</li>
 				</ul>
 			</div>
 			<!-- 右侧 -->
 			<div class="right">
-			<div v-for="i,index in data.rightlist" :key="index">
+			<div v-for="i,index in rightlist" :key="index">
 				<p>/{{i.cat_name}}/</p>
 				<ul>
 					<li v-for="child,ind in i.children" >
@@ -30,27 +30,36 @@
 	</view>
 </template>
 
-<script lang="ts" setup>
-	import {reactive} from 'vue';
+<script lang="ts">
+	import {reactive,toRefs} from 'vue';
 	import http from '../request/http.js'
-	const data=reactive({
-		leftlist:[],
-		catid:1,
-		rightlist:[],
-		onelist:[]
-	})
-	// 点击高亮
-	const btn=(id,item)=>{
-		console.log(item);
-		data.catid=id
-		data.rightlist=item
+	export default{
+		setup() {
+			const data=reactive({
+				leftlist:[],
+				catid:1,
+				rightlist:[],
+				onelist:[],
+			})
+			// 点击高亮
+			const btn=(id,item)=>{
+				console.log(item);
+				data.catid=id
+				data.rightlist=item
+			}
+			// 左侧侧边栏
+			http('/categories').then(res=>{
+				data.leftlist=res.message
+				console.log(res.message[0].children);
+				data.onelist=res.message[0].children
+			})
+			return{
+				btn,
+				...toRefs(data)
+			}
+		},
+		
 	}
-	// 左侧侧边栏
-	http('/categories').then(res=>{
-		data.leftlist=res.message
-		console.log(res.message[0].children);
-		data.onelist=res.message[0].children
-	})
 	
 	
 </script>
